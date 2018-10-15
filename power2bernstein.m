@@ -20,12 +20,16 @@ function b = power2bernstein(p)
 
 n = length(p)-1;
 b=zeros(1,n+1);
+p=fliplr(p);
 for i=1:n+1
     for j=i:n+1
-        b(j)=b(j)+p(i)*(-1)^(i+j-2)*nchoosek(n,j-1)*nchoosek(j-1,i-1);
+        b(j)=b(j)+p(i)*nchoosek(j-1,i-1)/nchoosek(n,i-1);
         
     end
     
 end
-b=fliplr(b);
+
+if n==0
+    b=b(1);
+end
 end

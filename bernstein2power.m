@@ -18,14 +18,20 @@ function p = bernstein2power(b)
 % bazi od 0-tega do n-tega Bernsteinovega baznega 
 % polinoma
 
+
 n = length(b)-1;
+
 p=zeros(1,n+1);
-b=fliplr(b);
 for i=1:n+1
     for j=i:n+1
-        p(j)=p(j)+b(i)*nchoosek(j-1,i-1)/nchoosek(n,i-1);
+        p(j)=p(j)+b(i)*(-1)^(i+j-2)*nchoosek(n,j-1)*nchoosek(j-1,i-1);
         
     end
     
+end
+p=fliplr(p);
+
+if n==0
+   p=p(1); 
 end
 end
