@@ -18,11 +18,17 @@ function b = bezier (B,t)
 % predstavlja toèko na Bezierjevi krivulji pri
 % parametru iz t na i- tem mestu
 
+d=size(B,2);
+k=length(t);
 b=zeros(k,d);
 
 for i=1:k
     dec_t=t(i);
-    dec_b=B
+    for j=1:d
+       dec_b=B(:,j);
+       dec_D=decasteljau(dec_b,dec_t);
+       b(i,j)=dec_D(1,end);
+    end
 end
 
 end

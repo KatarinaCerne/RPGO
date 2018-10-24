@@ -18,7 +18,7 @@ function b = bezier (B,t)
 % predstavlja toèko na Bezierjevi krivulji pri
 % parametru iz t na i- tem mestu
 
-d=2;
+d=size(B,2);
 k=length(t);
 b=zeros(k,d);
 
