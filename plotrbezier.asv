@@ -1,0 +1,22 @@
+function plotrbezier (B , w t)
+
+dim=size(B,2);
+n=size(B,1)-1;
+
+rbez = rbezier(B,w,t);
+
+x=bez_b(:,1);
+y=bez_b(:,2);
+
+Q = zeros(n,dim);
+
+for i=1:n
+    
+    
+end
+
+
+%plot(x,y)
+
+
+end
