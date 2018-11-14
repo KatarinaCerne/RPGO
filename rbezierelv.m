@@ -36,12 +36,11 @@ for i=1:n+1
     B_nova(i,end)=w(i);
 end
 
-%B_elv = bezierelv(B_nova,1);
-%we = B_elv(:,end);
+%Be = bezierelv(B_nova,1);
+%we = Be(:,end);
 % for i=1:n
-%     B_elv(i,:) = B_elv(i,:)/we(i);
+%     Be(i,:) = Be(i,:)/we(i);
 % end
-%Be = B_elv(:,1:end-1);
 
 
 
