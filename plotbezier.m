@@ -1,4 +1,4 @@
-function plotbezier (B , t)
+function plotbezier (B , t,poligon)
 % Opis :
 % plotbezier nariše Bezierjevo krivuljo za dane kontrolne
 % toèke in seznam parametrov
@@ -18,11 +18,15 @@ bez_b=bezier(B,t); %v vrstici so koordinate toèke pri parametru t
 x=bez_b(:,1);
 y=bez_b(:,2);
 
-plot(x,y)
+if poligon==1
+    plot(x,y)
+    hold on
+    plot(B(:,1),B(:,2),'-o')
+    hold off
+else
+    plot(x,y)
+end
 
-%treba dodati:
-%-kako se rišejo toèke (tj poligon)
-%-zrcaljenja, rotacije
 
 
 end

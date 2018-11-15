@@ -1,0 +1,17 @@
+B=[0,0;2,3;4,2;5,-1];
+t=1/2;
+
+p1=1;
+BS1=beziersub(B,t,p1);
+
+kr1=BS1{1,1};
+kr2=BS1{1,2};
+
+plot(kr1(:,1),kr1(:,2),'-')
+
+p2=2;
+BS2=beziersub(B,t,p2);
+
+p3=3;
+BS3=beziersub(B,t,p3);
+

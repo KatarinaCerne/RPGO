@@ -19,6 +19,28 @@ n=size(B,1)-1;
 
 BS = cell(k,2^k);
 
+for i=1:k
+    for m=1:2:(2^i)
+        BS{i,m}=zeros(n+1,d);
+        BS{i,m+1}=zeros(n+1,d);
+        z=(m+1)/2;
+        if i==1
+            B1=B;
+        else
+            B1=BS{i-1,z};
+        end
+            for j=1:d
+               dec_b=B1(:,j);
+               dec_D=decasteljau(dec_b,t);
+               s = size(dec_D,1);
+               BS{i,m}(:,j)=dec_D(end-s+1:-s+1:s);
+               BS{i,m+1}(:,j)=fliplr(dec_D(1,:));
+            end
+
+    end
+
+end
+
 % b1=zeros(d,n+1);
 % b2=zeros(d,n+1);
 
@@ -33,34 +55,4 @@ BS = cell(k,2^k);
 % 
 % BS{1,1}=b1;
 % BS{1,2}=b2;
-
-for i=1:k
-    for m=1:2:(2^i)
-        BS{i,m}=zeros(d,n+1);
-        BS{i,m+1}=zeros(d,n+1);
-        z=(m+1)/2;
-        if i==1
-            B1=B;
-        else
-            B1=BS{i-1,z};
-        end
-            for j=1:d
-               dec_b=B1(:,j);
-               dec_D=decasteljau(dec_b,t);
-               s = size(dec_D,1);
-               b1_pom=dec_D(s:s-1:end-1);
-               %size(b1_pom)
-               %size(BS{i,m}(j,:))
-               BS{i,m}(j,:)=fliplr(b1_pom);
-               %BS{i,m+1}(j,:)=dec_D(1,:);
-            end
-
-    end
-%BS{k,1}=b1;
-%BS{k,2}=b2;
-end
-
-%BS{1}=b1;
-%BS{2}=b2;
-
 end

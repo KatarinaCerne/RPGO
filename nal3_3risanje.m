@@ -17,12 +17,12 @@ y2=odv_b2(:,2);
 
 figure
 subplot(2,3,1)       % 1. graf v polju z 2 vrsticama in 3 stolpci
-plotbezier(B1,t1)
+plotbezier(B1,t1,1)
 title('krivulja')
 
 subplot(2,3,2)       
 plot(x1,y1)
-title('prvi odvod krivulje')
+title('prvi odvod krivulje') %kako se raèuna poligon odvoda???
 
 subplot(2,3,3)       
 plot(x2,y2)
