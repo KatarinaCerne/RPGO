@@ -24,7 +24,7 @@ for i=1:k
         %po 2 sosednji matriki izhajata iz iste prejšnje matrike
         BS{i,m}=zeros(n+1,d);
         BS{i,m+1}=zeros(n+1,d);
-        z=(m+1)/2; %nam da položaj matrike iz višjega nivoja, iz katere bosta izšli matriki, ki ju trenutno delamo
+        z=(m+1)/2; %to je številka 
         if i==1
             B1=B;
         else
@@ -34,8 +34,8 @@ for i=1:k
                dec_b=B1(:,j);
                dec_D=decasteljau(dec_b,t);
                s = size(dec_D,1);
-               BS{i,m+1}(:,j)=dec_D(end-s+1:-s+1:s); %druga diagonala(od desno zgoraj do levo spodaj)
-               BS{i,m}(:,j)=dec_D(1,:); %obraèanje??
+               BS{i,m}(:,j)=dec_D(end-s+1:-s+1:s);
+               BS{i,m+1}(:,j)=fliplr(dec_D(1,:));
             end
 
     end

@@ -10,7 +10,7 @@ dim=size(B1,2);
 %konstrukcija x in y-koordinat odvodov:
 r1=1;
 odv_b1=bezierder(B1,r1,t1); %prvi odvod, toèke na krivulji
-x1=odv_b1(:,1); %x-koordinate toèk na krivulji
+x1=odv_b1(:,1);
 y1=odv_b1(:,2);
 %plot(x1,y1);
 
@@ -31,21 +31,8 @@ dif_y2=factorial(n)/factorial(n-r2)*diff(B1(:,2),2)+a1(2);
 
 %----------------------------------------------------------
 %preverjanje enakosti metod
-Bodv1=zeros(n-r1+1,dim);
-Bodv1(:,1)=dif_x1;
-Bodv1(:,2)=dif_y1;
-bez_odv1=bezier(Bodv1,t1);
-%plotbezier(Bodv1,t1,1)
+Bodv1=zeros(n-1,dim);
 
-%pause
-
-Bodv2=zeros(n-r2+1,dim);
-Bodv2(:,1)=dif_x2;
-Bodv2(:,2)=dif_y2;
-bez_odv2=bezier(Bodv2,t1);
-%plotbezier(Bodv2,t1,1)
-
-%pause
 
 %----------------------------------------------------------
 
@@ -58,8 +45,6 @@ hold on
 plot(dif_x1,dif_y1,'-')
 hold on
 scatter(dif_x1,dif_y1,'filled')
-% hold on 
-% plotbezier(Bodv1,t1,1)
 hold off
 
 pause
@@ -69,8 +54,6 @@ hold on
 plot(dif_x2,dif_y2,'-')
 hold on
 scatter(dif_x2,dif_y2,'filled')
-% hold on
-% plotbezier(Bodv2,t1,1)
 hold off 
 
 %------------------------------------------------

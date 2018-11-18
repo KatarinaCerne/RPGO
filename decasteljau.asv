@@ -33,6 +33,6 @@ for r=2:n+1
        D(i,r)=NaN; 
     end
 end
-%D(i,j)=b_{i-1}^{j-1} v decast. shemi
+%D(i,j)
 
 end
