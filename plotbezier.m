@@ -34,14 +34,20 @@ if dim == 2
 
 elseif dim==1
     x=linspace(0,1);
-    plot(x,bez_b);
+    plot(x,bez_b); %podati je treba polinom v èloveškem naèinu
     
 elseif dim==3
     x=bez_b(:,1);
     y=bez_b(:,2);
     z=bez_b(:,3);
     
-    surf(x,y,z);
+    %surf(x,y,z);
+    scatter3(B(:,1),B(:,2),B(:,3));
+    hold on
+    plot3(x,y,z);
+    hold on
+    plot3(B(:,1),B(:,2),B(:,3),'b');
+    hold off
 end
 
 %1d in 3d??

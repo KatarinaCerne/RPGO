@@ -4,15 +4,17 @@ t=linspace(0,1,1000);
 
 %1.
 B1=[cos(kot),-sin(kot); 1/cos(kot),0; cos(kot),sin(kot)];
+plotbezier(B1,t,0)
+hold on
 
-% plotbezier(B1,t,0)
-% hold on
-% for i=1:11
-%     Rot=[cos(i*kot),-sin(i*kot);sin(i*kot),cos(i*kot)];
-%     B_rot=(Rot*B1')';
-%     plotbezier(B_rot,t,0);
-%     hold on
-% end
+for i=1:pi/kot
+    Rot=[cos(2*i*kot),-sin(2*i*kot);sin(2*i*kot),cos(2*i*kot)];
+    B_rot=(Rot*B1')';
+    plotbezier(B_rot,t,0);
+    hold on
+end
+hold on
+pause
 
 bez_b1=bezier(B1,t); %v vrstici so koordinate toèke pri parametru t
 
@@ -27,14 +29,16 @@ end
 B2=[cos(kot),-sin(kot);cos(kot)+1/3*sin(kot),-sin(kot)+1/3*cos(kot);
     cos(kot)+1/3*sin(kot),sin(kot)-1/3*cos(kot);cos(kot),sin(kot)];
 
-% plotbezier(B2,t,0)
-% hold on
-% for i=1:11
-%     Rot=[cos(i*kot),-sin(i*kot);sin(i*kot),cos(i*kot)];
-%     B_rot=(Rot*B2')';
-%     plotbezier(B_rot,t,0);
-%     hold on
-% end
+plotbezier(B2,t,0)
+hold on
+for i=1:pi/kot
+    Rot=[cos(2*i*kot),-sin(2*i*kot);sin(2*i*kot),cos(2*i*kot)];
+    B_rot=(Rot*B2')';
+    plotbezier(B_rot,t,0);
+    hold on
+end
+hold on
+pause
 
 bez_b2=bezier(B2,t); %v vrstici so koordinate toèke pri parametru t
 
@@ -49,14 +53,16 @@ end
 B3=[cos(kot),-sin(kot); 4/3-1/3*cos(kot),4/3*cot(kot)-4/3*1/sin(kot)+1/3*sin(kot);
     4/3-1/3*cos(kot),-1/3*sin(kot)-4/3*cot(kot)+4/3*1/sin(kot); cos(kot),sin(kot)];
 
-% plotbezier(B3,t,0)
-% hold on
-% for i=1:11
-%     Rot=[cos(i*kot),-sin(i*kot);sin(i*kot),cos(i*kot)];
-%     B_rot=(Rot*B3')';
-%     plotbezier(B_rot,t,0);
-%     hold on
-% end
+plotbezier(B3,t,0)
+hold on
+for i=1:pi/kot
+    Rot=[cos(2*i*kot),-sin(2*i*kot);sin(2*i*kot),cos(2*i*kot)];
+    B_rot=(Rot*B3')';
+    plotbezier(B_rot,t,0);
+    hold on
+end
+hold off
+
 
 bez_b3=bezier(B3,t); %v vrstici so koordinate toèke pri parametru t
 

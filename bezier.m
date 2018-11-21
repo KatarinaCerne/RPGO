@@ -7,16 +7,16 @@ function b = bezier (B,t)
 % b = bezier (B,t)
 %
 % Vhodna podatka :
-% B matrika velikosti n+1 x d, ki predstavlja kontrolne
-% toèke Bezierjeve krivulje stopnje n v
-% d- dimenzionalnem prostoru ,
-% t seznam parametrov dolžine k, pri katerih raèunamo
-% vrednost Bezierjeve krivulje
+% B     matrika velikosti n+1 x d, ki predstavlja kontrolne
+%       toèke Bezierjeve krivulje stopnje n v
+%       d- dimenzionalnem prostoru ,
+% t     seznam parametrov dolžine k, pri katerih raèunamo
+%       vrednost Bezierjeve krivulje
 %
 % Izhodni podatek :
-% b matrika velikosti k x d, kjer i-ta vrstica
-% predstavlja toèko na Bezierjevi krivulji pri
-% parametru iz t na i- tem mestu
+% b     matrika velikosti k x d, kjer i-ta vrstica
+%       predstavlja toèko na Bezierjevi krivulji pri
+%       parametru iz t na i- tem mestu
 
 d=size(B,2);
 k=length(t);

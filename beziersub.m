@@ -28,7 +28,7 @@ for i=1:k
         if i==1
             B1=B;
         else
-            B1=BS{i-1,z};
+            B1=BS{i-1,z}; %iz te matrike bosta izšli matriki, ki ju delamo
         end
             for j=1:d
                dec_b=B1(:,j);

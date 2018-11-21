@@ -27,22 +27,14 @@ dif_x1=factorial(n)/factorial(n-r1)*diff(B1(:,1),1)+a1(1); %x-koord. kontrolnih 
 dif_y1=factorial(n)/factorial(n-r1)*diff(B1(:,2),1)+a1(2); %ali se a tudi množi z n??
 
 dif_x2=factorial(n)/factorial(n-r2)*diff(B1(:,1),2)+a1(1); %x-koord. kontrolnih toèk za drugi odvod
-dif_y2=factorial(n)/factorial(n-r2)*diff(B1(:,2),2)+a1(2);
+dif_y2=factorial(n)/factorial(n-r2)*diff(B1(:,2),2)+a1(2); %to sta stolpca
 
 %----------------------------------------------------------
 %preverjanje enakosti metod
-Bodv1=zeros(n-r1+1,dim);
-Bodv1(:,1)=dif_x1;
-Bodv1(:,2)=dif_y1;
-bez_odv1=bezier(Bodv1,t1);
+bez_odv1=bezier([dif_x1,dif_y1],t1);
 %plotbezier(Bodv1,t1,1)
-
 %pause
-
-Bodv2=zeros(n-r2+1,dim);
-Bodv2(:,1)=dif_x2;
-Bodv2(:,2)=dif_y2;
-bez_odv2=bezier(Bodv2,t1);
+bez_odv2=bezier([dif_x2,dif_y2],t1);
 %plotbezier(Bodv2,t1,1)
 
 %pause
@@ -50,6 +42,10 @@ bez_odv2=bezier(Bodv2,t1);
 %----------------------------------------------------------
 
 plotbezier(B1,t1,1)
+hold on
+priparametru=bezier(B1,1/2);
+scatter(priparametru(1),priparametru(2),'filled','g')
+hold off
 
 pause
 
@@ -60,6 +56,9 @@ hold on
 scatter(dif_x1,dif_y1,'filled')
 % hold on 
 % plotbezier(Bodv1,t1,1)
+hold on
+priparametru=bezierder(B1,1,1/2);
+scatter(priparametru(1),priparametru(2),'filled','g')
 hold off
 
 pause
@@ -71,6 +70,9 @@ hold on
 scatter(dif_x2,dif_y2,'filled')
 % hold on
 % plotbezier(Bodv2,t1,1)
+hold on
+priparametru=bezierder(B1,2,1/2);
+scatter(priparametru(1),priparametru(2),'filled','g')
 hold off 
 
 %------------------------------------------------

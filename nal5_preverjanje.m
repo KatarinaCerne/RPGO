@@ -12,13 +12,13 @@ plot(B(:,1),B(:,2),'-');
 hold on;
 scatter(B(:,1),B(:,2),'filled');
 hold on
-plot(kr1(:,1),kr1(:,2),'-');
+plot(kr1(:,1),kr1(:,2),'g');
 hold on
-scatter(kr1(:,1),kr1(:,2),'filled');
+scatter(kr1(:,1),kr1(:,2),'filled','g');
 hold on
-plot(kr2(:,1),kr2(:,2),'-');
+plot(kr2(:,1),kr2(:,2),'r');
 hold on
-scatter(kr2(:,1),kr2(:,2),'filled');
+scatter(kr2(:,1),kr2(:,2),'filled','r');
 hold on
 plotbezier(B,t1,1);
 hold off
@@ -34,9 +34,20 @@ scatter(B(:,1),B(:,2),'filled');
 hold on
 for i=1:2^p2
     kr=BS2{p2,i}; %vzamemo matrike iz zadnje vrstice celice in jih rišemo
-    plot(kr(:,1),kr(:,2),'-');
-    hold on
-    scatter(kr(:,1),kr(:,2),'filled')
+    
+    if mod(i,2)==0
+        plot(kr(:,1),kr(:,2),'r');
+            hold on
+        scatter(kr(:,1),kr(:,2),'filled','r');
+    else
+       plot(kr(:,1),kr(:,2),'g');
+           hold on
+       scatter(kr(:,1),kr(:,2),'filled','g')
+    end
+    
+%     plot(kr(:,1),kr(:,2),'-');
+%     hold on
+%     scatter(kr(:,1),kr(:,2),'filled')
     hold on
     plotbezier(B,t1,1);
     hold on
@@ -54,9 +65,16 @@ scatter(B(:,1),B(:,2),'filled');
 hold on
 for i=1:2^p3
     kr=BS3{p3,i};
-    plot(kr(:,1),kr(:,2),'-');
-    hold on
-    scatter(kr(:,1),kr(:,2),'filled')
+    if mod(i,2)==0
+        plot(kr(:,1),kr(:,2),'r');
+            hold on
+        scatter(kr(:,1),kr(:,2),'filled','r');
+    else
+       plot(kr(:,1),kr(:,2),'g');
+           hold on
+       scatter(kr(:,1),kr(:,2),'filled','g')
+    end
+
     hold on
     plotbezier(B,t1,1);
     hold on
