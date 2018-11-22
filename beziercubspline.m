@@ -24,7 +24,7 @@ for i=1:m
    B{i}=zeros(4,dim); %v vsaki matriki 4 toèke: b0, b1, b2, b3
 end
 
-%B{i}(j,:) je (j-2)-ta toèka na i-tem delu krivulje
+%B{i}(j,:) je (j-2)-ta toèka na i-tem delu krivulje ?
 %toèke v D grejo od -1 do m+1
 
 %na robu:
@@ -50,6 +50,5 @@ for i=1:m-1
    B{i}(4,:)=(difer(i+1)/imenovalec1).*B{i}(3,:)+(difer(i)/imenovalec1).*B{i+1}(2,:);
    B{i+1}(1,:)=B{i}(4,:);
 end
-
 
 end

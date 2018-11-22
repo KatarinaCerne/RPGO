@@ -32,3 +32,4 @@ plotbezier(B,t,1)
 B1=[0,0;0,2;8,2;4,0];
 A1=decasteljau(B1(:,1),1/4);
 A2=decasteljau(B1(:,2),1/4);
+
