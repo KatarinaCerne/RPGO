@@ -33,3 +33,14 @@ B1=[0,0;0,2;8,2;4,0];
 A1=decasteljau(B1(:,1),1/4);
 A2=decasteljau(B1(:,2),1/4);
 
+Aa = [0 0; 1 2];
+Bb = [0 5; 1 7];
+
+% plotbezier(Aa,t,1)
+% hold on
+% plotbezier(Bb,t,1)
+% hold off
+
+
+
+
