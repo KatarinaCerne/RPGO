@@ -25,14 +25,14 @@ D=zeros(n+1,n+1);
 for i=1:n+1
     D(i,1)=b(i);
 end   
-    for r=2:n+1
-        for i=1:n-r+2
-            D(i,r)=(1-t)*D(i,r-1)+t*D(i+1,r-1);
-        end
-        for i=n-r+3:n+1
-           D(i,r)=NaN; 
-        end
+for r=2:n+1
+    for i=1:n-r+2
+        D(i,r)=(1-t)*D(i,r-1)+t*D(i+1,r-1);
     end
-
+    for i=n-r+3:n+1
+       D(i,r)=NaN; 
+    end
+end
+%D(i,j)=b_{i-1}^{j-1} v decast. shemi
 
 end

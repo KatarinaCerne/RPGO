@@ -1,4 +1,4 @@
-function [Be,we] = rbezierelv(B,w)
+function Be = rbezierelv(B,w)
 % Opis:
 %   rbezierelv  izvede  višanje  stopnje  dane  racionalne
 %   Bezierjeve  krivulje
@@ -28,22 +28,19 @@ dim = size(B,2);
 n = size(B,1)-1;
 
 B_nova = zeros(n+1,dim+1);
-we = zeros(n+2);
-Be = zeros(n+2,dim);
+%we = zeros(n+2);
+%Be = zeros(n+2,dim);
 
 for i=1:n+1
     B_nova(i,1:end-1)=w(i).*B(i,:);
     B_nova(i,end)=w(i);
 end
 
-%Be = bezierelv(B_nova,1);
-%we = Be(:,end);
-% for i=1:n
-%     Be(i,:) = Be(i,:)/we(i);
-% end
-
-
-
+Be = bezierelv(B_nova,1);
+we = Be(:,end);
+ for i=1:n
+     Be(i,:) = Be(i,:)/we(i);
+ end
 
 
 end
