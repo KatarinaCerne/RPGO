@@ -27,9 +27,9 @@ l = size(P,1);
 matrika = zeros(l,(m+1)*(n+1));
 
 for k=1:l
-    for i=1:m+1
-        for j=1:n+1
-            matrika(k,(i-1)*(n+1)+j)=BernstMI(m,i-1,u(k))*BernstMI(n,j-1,v(k));
+    for i=1:n+1
+        for j=1:m+1
+            matrika(k,(i-1)*(m+1)+j)=BernstMI(m,j,u(k))*BernstMI(n,i,v(k));
         end
     end
 end
@@ -40,9 +40,9 @@ Ry = matrika\P(:,2);
 Rz = matrika\P(:,3);
 
 
-Bx = reshape(Rx,[n+1,m+1]);
-By = reshape(Ry,[n+1,m+1]);
-Bz = reshape(Rz,[n+1,m+1]);
+% Bx = reshape(Rx,[m+1,n+1])';
+% By = reshape(Ry,[m+1,n+1])';
+% Bz = reshape(Rz,[m+1,n+1])';
 
 end
 
