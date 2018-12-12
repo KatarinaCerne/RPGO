@@ -9,5 +9,7 @@ B = [2,1,-1,0;5,3,-4,NaN;0,0,NaN,NaN;1,NaN,NaN,NaN];
 U = [pointbary(t2(1),t2(2),T)';pointbary(t2(1),t2(2),T)';pointbary(t2(1),t2(2),T)'];
 
 
-blossom3(B,U)
+blossom3(B,U);
+
+
 
