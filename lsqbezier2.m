@@ -24,24 +24,30 @@ function [Bx,By,Bz] = lsqbezier2(m,n,P,u,v)
 
 l = size(P,1);
 
-matrika = zeros(k,(m+1)*(n+1));
+matrika = zeros(l,(m+1)*(n+1));
 
 for k=1:l
     for i=1:n+1
         for j=1:m+1
-            matrika(k,(i-1)*(m+1)+(j+1))=BernstMI(m,j,u(k))*BernstMI(n,i,v(k));
+            matrika(k,(i-1)*(m+1)+j)=BernstMI(m,j,u(k))*BernstMI(n,i,v(k));
         end
     end
 end
 
-Bx = matrika\P(:,1);
-By = matrika\P(:,2);
-Bz = matrika\P(:,3);
 
+Rx = matrika\P(:,1);
+Ry = matrika\P(:,2);
+Rz = matrika\P(:,3);
+
+
+Bx = reshape(Rx,[m+1,n+1])';
+By = reshape(Ry,[m+1,n+1])';
+Bz = reshape(Rz,[m+1,n+1])';
 
 end
 
 function Bmi = BernstMI(m,i,uk)
+%vrednost B^m_i(uk)
 b = zeros(m+1,1);
 b(i+1)=1;
 Bmi = bezier(b,uk);
