@@ -1,4 +1,6 @@
-function b_k = pointbary(x,y,T)
+function b_k = pointbary(t,T)
+x=t(1);
+y=t(2);
 A = [1,1,1;T(1,1),T(2,1),T(3,1);T(1,2),T(2,2),T(3,2)];
 
 b_k = A\[1;x;y];
