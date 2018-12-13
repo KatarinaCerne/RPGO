@@ -13,11 +13,32 @@ U3 = [pointbary(t3,T)';pointbary(t3,T)';pointbary(t3,T)'];
 blossom3(B,U1);
 blossom3(B,U2);
 blossom3(B,U3);
+decasteljau3(B,pointbary(t3,T));
 
 smerx = [1,0];
 smery = [0,1];
 
-U3 
+U4 = [vectorbary(smerx,T)';pointbary(t1,T)';pointbary(t1,T)'];
+U5 = [vectorbary(smerx,T)';pointbary(t2,T)';pointbary(t2,T)'];
+U6 = [vectorbary(smerx,T)';pointbary(t3,T)';pointbary(t3,T)'];
 
+U7 = [vectorbary(smery,T)';pointbary(t1,T)';pointbary(t1,T)'];
+U8 = [vectorbary(smery,T)';pointbary(t2,T)';pointbary(t2,T)'];
+U9 = [vectorbary(smery,T)';pointbary(t3,T)';pointbary(t3,T)'];
 
+3*blossom3(B,U4);
+3*blossom3(B,U5);
+3*blossom3(B,U6);
+
+3*blossom3(B,U7);
+3*blossom3(B,U8);
+3*blossom3(B,U9);
+
+U10 = [vectorbary(smerx,T)';vectorbary(smerx,T)';pointbary(t1,T)'];
+U11 = [vectorbary(smerx,T)';vectorbary(smerx,T)';pointbary(t2,T)'];
+U12 = [vectorbary(smerx,T)';vectorbary(smerx,T)';pointbary(t3,T)'];
+
+6*blossom3(B,U10);
+6*blossom3(B,U11);
+6*blossom3(B,U12);
 
