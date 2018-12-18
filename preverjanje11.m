@@ -12,5 +12,5 @@ v=linspace(0,1,50);
 
 hold on
 surf(bx,by,bz)
-mesh(Bx,By,Bz,'Facecolor','none')
+mesh(Bx,By,Bz,'Facecolor','none','EdgeColor','black')
 hold off
